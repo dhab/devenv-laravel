@@ -8,3 +8,4 @@ php7.0-mysql
 php7.0-xml
 php7.0-zip
 openssh-client
+git
