@@ -1,10 +1,8 @@
 FROM debian:stretch
 MAINTAINER Dennis Holmen <dennis.holmen@gmail.com>
 
-RUN apt-get update -yqq
-RUN apt-get install dselect
-RUN cat /etc/apt/sources.list
 COPY packages.to.install.list /
+RUN apt-get update -yqq
 RUN apt-get install -yyqq $(cat /packages.to.install.list)
 
 # Download trusted certs 
