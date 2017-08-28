@@ -33,7 +33,7 @@ RUN php -r "readfile('https://getcomposer.org/installer');" | php && \
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 WORKDIR /var/www
-ENTRYPOINT ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord"]
 # CMD php ./artisan serve --port=80 --host=0.0.0.0
 
 EXPOSE 80
