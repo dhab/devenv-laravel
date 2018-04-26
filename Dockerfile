@@ -6,19 +6,27 @@ ENV QUEUE_CONNECTION=redis
 ENV QUEUE_NAME=default
 
 RUN apt-get update -yqq && apt-get install -yyqq \
+apt-transport-https \
+ca-certificates \
+wget
+
+RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+RUN sh -c 'echo "deb https://packages.sury.org/php/ stretch main" > /etc/apt/sources.list.d/php.list'
+
+RUN apt-get update -yqq && apt-get install -yyqq \
 git \
 openssh-client \
 php-imagick \
-php7.0-fpm \
-php7.0-bcmath \
-php7.0-curl \
-php7.0-fpm \
-php7.0-gd \
-php7.0-mbstring \
-php7.0-mysql \
-php7.0-xml \
-php7.0-zip \
-php7.0-xdebug \
+php7.1-fpm \
+php7.1-bcmath \
+php7.1-curl \
+php7.1-fpm \
+php7.1-gd \
+php7.1-mbstring \
+php7.1-mysql \
+php7.1-xml \
+php7.1-zip \
+php7.1-xdebug \
 supervisor
 
 # Download trusted certs 
