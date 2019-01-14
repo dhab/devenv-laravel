@@ -18,6 +18,7 @@ openssh-client
 RUN apt-get install -yyqq \
 nginx \
 php-imagick \
+libmagickcore-6.q16-6-extra \
 php7.3-fpm \
 php7.3-bcmath \
 php7.3-curl \
