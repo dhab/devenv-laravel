@@ -33,6 +33,9 @@ php7.3-zip
 RUN mkdir -p /etc/ssl/certs && update-ca-certificates
 RUN mkdir -p /var/log/supervisord/apps
 
+# Install sentry-cli
+RUN curl -sL https://sentry.io/get-cli/ | bash
+
 # Install composer
 RUN php -r "readfile('https://getcomposer.org/installer');" | php && \
    mv composer.phar /usr/bin/composer && \
